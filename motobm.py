@@ -83,7 +83,7 @@ def process_channels():
         for item in chunk:
             channels += format_channel(item)
 
-        if (len(channel_chunks) == 1):
+        if len(channel_chunks) == 1:
             zone_alias = args.name
         else:
             zone_alias = f'{args.name} #{chunk_number}'
