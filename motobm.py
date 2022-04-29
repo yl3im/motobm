@@ -74,7 +74,7 @@ def filter_list():
 
 def process_channels():
     channel_chunks = [filtered_list[i:i + args.zone_capacity] for i in range(0, len(filtered_list), args.zone_capacity)]
-    chunk_number = 0;
+    chunk_number = 0
 
     for chunk in channel_chunks:
         channels = ''
