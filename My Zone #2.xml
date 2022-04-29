@@ -1,0 +1,606 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<config>
+  <category name="Zone">
+    <set name="Zone" alias="My Zone #2" key="NORMAL">
+      <collection name="ZoneItems">
+        
+<set name="ConventionalPersonality" alias="SK0NN-1 TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9250</field>
+  <field name="CP_RXFREQ">432.9250</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0NN-1 TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0NN-1 TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9250</field>
+  <field name="CP_RXFREQ">432.9250</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0NN-1 TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0QO TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.5625</field>
+  <field name="CP_RXFREQ">432.5625</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0QO TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0QO TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.5625</field>
+  <field name="CP_RXFREQ">432.5625</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0QO TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0RMT TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.7375</field>
+  <field name="CP_RXFREQ">432.7375</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RMT TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0RMT TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.7375</field>
+  <field name="CP_RXFREQ">432.7375</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RMT TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0RPF TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.8875</field>
+  <field name="CP_RXFREQ">432.8875</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RPF TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0RPF TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.8875</field>
+  <field name="CP_RXFREQ">432.8875</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RPF TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0RYG TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9500</field>
+  <field name="CP_RXFREQ">432.9500</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0RYG TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9500</field>
+  <field name="CP_RXFREQ">432.9500</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0RYG-4 TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9625</field>
+  <field name="CP_RXFREQ">432.9625</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG-4 TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0RYG-4 TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9625</field>
+  <field name="CP_RXFREQ">432.9625</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG-4 TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0RYG-5 TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9125</field>
+  <field name="CP_RXFREQ">432.9125</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG-5 TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0RYG-5 TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9125</field>
+  <field name="CP_RXFREQ">432.9125</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG-5 TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0RYG-6 TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.7625</field>
+  <field name="CP_RXFREQ">432.7625</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG-6 TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0RYG-6 TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.7625</field>
+  <field name="CP_RXFREQ">432.7625</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0RYG-6 TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0SX TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9875</field>
+  <field name="CP_RXFREQ">432.9875</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0SX TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0SX TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9875</field>
+  <field name="CP_RXFREQ">432.9875</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0SX TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0VR #1 TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9750</field>
+  <field name="CP_RXFREQ">432.9750</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0VR #1 TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0VR #1 TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9750</field>
+  <field name="CP_RXFREQ">432.9750</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0VR #1 TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0VR #2 TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.5875</field>
+  <field name="CP_RXFREQ">432.5875</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0VR #2 TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0VR #2 TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.5875</field>
+  <field name="CP_RXFREQ">432.5875</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0VR #2 TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK0YZ TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9375</field>
+  <field name="CP_RXFREQ">432.9375</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0YZ TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK0YZ TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">0</field>
+  <field name="CP_TXFREQ">434.9375</field>
+  <field name="CP_RXFREQ">432.9375</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK0YZ TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK2AT TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.9750</field>
+  <field name="CP_RXFREQ">432.9750</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2AT TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK2AT TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.9750</field>
+  <field name="CP_RXFREQ">432.9750</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2AT TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK2AZ TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.8500</field>
+  <field name="CP_RXFREQ">432.8500</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2AZ TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK2AZ TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.8500</field>
+  <field name="CP_RXFREQ">432.8500</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2AZ TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK2CI TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.8000</field>
+  <field name="CP_RXFREQ">432.8000</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2CI TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK2CI TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.8000</field>
+  <field name="CP_RXFREQ">432.8000</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2CI TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+<set name="ConventionalPersonality" alias="SK2DR TS1" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="1">SLOT1</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.9000</field>
+  <field name="CP_RXFREQ">432.9000</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2DR TS1</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+<set name="ConventionalPersonality" alias="SK2DR TS2" key="DGTLCONV6PT25">
+  <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
+  <field name="CP_SLTASSGMNT" Name="2">SLOT2</field>
+  <field name="CP_COLORCODE">2</field>
+  <field name="CP_TXFREQ">434.9000</field>
+  <field name="CP_RXFREQ">432.9000</field>
+  <field name="CP_EMACKALERTEN">True</field>
+  <field name="CP_CNVPERSALIAS">SK2DR TS2</field>
+  <field name="CP_TXINHXPLEN" Name="Color Code Free">MTCHCLRCD</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_GPSRVRTPERSIT" Name="Selected">SELECTED</field>
+  <field name="CP_OVCMDECODEENABLE">True</field>
+  <field name="CP_TXCOMPUDPIPHEADEN" Name="DMR Standard">DMR_UDP_HEADER</field>
+  <field name="CP_LOCATIONDATADELIVERYMODE" Name="Follow Data Call Confirmed">FOLLOW_CALL_DATA_SETTING</field>
+  <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
+  <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
+  <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+</set>
+    
+      </collection>
+      <field name="ZP_ZONEALIAS">My Zone #2</field>
+      <field name="ZP_ZONETYPE" Name="Normal">NORMAL</field>
+      <field name="ZP_ZVFNLITEM" Name="None">NONE</field>
+      <field name="Comments"></field>
+    </set>
+  </category>
+</config>

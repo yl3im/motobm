@@ -24,8 +24,6 @@ args = parser.parse_args()
 bm_url = 'https://api.brandmeister.network/v1.0/repeater/?action=LIST'
 bm_file = 'BM.json'
 filtered_list = []
-zone = ''
-zones = []
 existing = {}
 
 
@@ -75,8 +73,6 @@ def filter_list():
 
 
 def process_channels():
-    global zones
-
     channel_chunks = [filtered_list[i:i + args.zone_capacity] for i in range(0, len(filtered_list), args.zone_capacity)]
     chunk_number = 0;
 
