@@ -9,7 +9,8 @@ parser.add_argument('-n', '--name', required=True, help='Zone name.')
 parser.add_argument('-b', '--band', choices=['vhf', 'uhf'], required=True, help='Repeater band.')
 
 parser.add_argument('-t', '--type', choices=['mcc'], required=True,
-                    help='Select repeaters by MCC code, QTH locator index or GPS coordinates. Only MCC option is implemented as of now.')
+                    help='Select repeaters by MCC code, QTH locator index or GPS coordinates. '
+                         'Only MCC option is implemented as of now.')
 parser.add_argument('-m', '--mcc', help='First repeater ID digits, usually a 3 digits MCC.')
 
 parser.add_argument('-f', '--force', action='store_true',

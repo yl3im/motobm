@@ -29,6 +29,12 @@ For example:
 
 will create XML zone file(s) with all German repeaters for 2m band with 6 digit ID (real repeaters, not just hotspots), split to 16 channels per one zone.
 
+## Importing to CPS2
+
+* Open the XML file contents in text editor, like Notepad.
+* Select All. Copy.
+* Open CPS2, on its left pane go to `Configuration` -> `Zone/Channel Assignment`, right-click on `Zone` and choose Paste.
+
 ## ToDo
 
 * location based search (GPS area)
