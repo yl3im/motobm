@@ -190,6 +190,7 @@ def write_zone_file(zone_alias, contents):
     print(f'Zone "{zone_file_name}" file written.\n')
 
 
-download_file()
-filter_list()
-process_channels()
+if __name__ == '__main__':
+    download_file()
+    filter_list()
+    process_channels()
