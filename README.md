@@ -51,3 +51,7 @@ will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (r
 * Open the XML file contents in text editor, like Notepad.
 * Select All. Copy.
 * Open CPS2, on its left pane go to `Configuration` -> `Zone/Channel Assignment`, right-click on `Zone` and choose Paste.
+
+## What about CPS16?
+
+Unfortunately, CPS16 doesn't support pasting of XML content. Therefore this method only works for CPS2.
