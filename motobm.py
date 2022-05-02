@@ -213,7 +213,7 @@ def write_zone_file(zone_alias, contents):
     zone_file = open(zone_file_name, "wt")
     zone_file.write(contents)
     zone_file.close()
-    print(f'Zone "{zone_file_name}" file written.\n')
+    print(f'Zone file "{zone_file_name}" written.\n')
 
 
 if __name__ == '__main__':
