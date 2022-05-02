@@ -30,7 +30,8 @@ parser.add_argument('-lng', '-lon', type=float, help='Longitude of a GPS positio
 parser.add_argument('-p', '--pep', action='store_true', help='Only select repeaters with defined power.')
 parser.add_argument('-6', '--six', action='store_true', help='Only select repeaters with 6 digit ID.')
 parser.add_argument('-zc', '--zone-capacity', default=160, type=int,
-                    help='Channel capacity within zone. 160 by default as for top models, use 16 for the lite ones.')
+                    help='Channel capacity within zone. 160 by default as for top models, use 16 for the lite and '
+                         'non-display ones.')
 
 args = parser.parse_args()
 
