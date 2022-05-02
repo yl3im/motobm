@@ -29,7 +29,7 @@ optional arguments:
   -p, --pep             Only select repeaters with defined power.
   -6, --six             Only select repeaters with 6 digit ID.
   -zc ZONE_CAPACITY, --zone-capacity ZONE_CAPACITY
-                        Channel capacity within zone. 160 by default as for top models, use 16 for the lite ones.
+                        Channel capacity within zone. 160 by default as for top models, use 16 for the lite and non-display ones.
 ```
 
 ## Examples
