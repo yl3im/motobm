@@ -1,5 +1,5 @@
 # motobm
-MOTOTRBO zone file generator from BrandMeister repeater list
+MOTOTRBO zone file generator from BrandMeister repeater list. It makes use of [BrandMeister API](https://wiki.brandmeister.network/index.php/API/Halligan_API) to retrieve the the list of actual DMR repeaters and importing them into Motorola DMR radios as zones, filtered by country or location.
 
 ## Installation
 
@@ -54,4 +54,4 @@ will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (r
 
 ## What about CPS16?
 
-Unfortunately, CPS16 doesn't support pasting of XML content. Therefore this method only works for CPS2.
+Unfortunately, CPS16 doesn't support pasting of XML content. Therefore this method only works for CPS2 which requires a [radio firmware version of R2.10 or higher](https://cwh050.mywikis.wiki/wiki/List_of_software_versions).
