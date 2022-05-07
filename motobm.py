@@ -4,6 +4,7 @@ import argparse
 import json
 from os.path import exists
 from urllib import request
+from tabulate import tabulate
 
 import geopy.distance
 import maidenhead
@@ -38,6 +39,7 @@ args = parser.parse_args()
 bm_url = 'https://api.brandmeister.network/v1.0/repeater/?action=LIST'
 bm_file = 'BM.json'
 filtered_list = []
+output_list = []
 existing = {}
 
 if args.type == 'qth':
@@ -111,6 +113,10 @@ def process_channels():
         for item in chunk:
             channels += format_channel(item)
 
+        print('\n',
+              tabulate(output_list, headers=['Callsign', 'RX', 'TX', 'CC', 'ID', 'URL'], disable_numparse=True),
+              '\n')
+
         if len(channel_chunks) == 1:
             zone_alias = args.name
         else:
@@ -135,6 +141,7 @@ def process_channels():
 
 def format_channel(item):
     global existing
+    global output_list
 
     if existing[item['callsign']] == 1:
         ch_alias = item['callsign']
@@ -145,7 +152,8 @@ def format_channel(item):
     ch_tx = item['tx']
     ch_cc = item['colorcode']
 
-    print(f"{ch_alias} Rx: {ch_rx} Tx: {ch_tx} CC: {ch_cc} ID: {item['repeaterid']}")
+    output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['repeaterid'],
+                        f"https://brandmeister.network/index.php?page=repeater&id={item['repeaterid']}"])
 
     if item['rx'] == item['tx']:
         return f'''

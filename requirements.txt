@@ -1,3 +1,4 @@
 geographiclib==1.52
 geopy==2.2.0
 maidenhead==1.6.0
+tabulate==0.8.9
