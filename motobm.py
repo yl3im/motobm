@@ -153,7 +153,7 @@ def format_channel(item):
     ch_cc = item['colorcode']
 
     output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['repeaterid'],
-                        f"https://brandmeister.network/index.php?page=repeater&id={item['repeaterid']}"])
+                        f"https://brandmeister.network/?page=repeater&id={item['repeaterid']}"])
 
     if item['rx'] == item['tx']:
         return f'''
