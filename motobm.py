@@ -8,6 +8,7 @@ from tabulate import tabulate
 
 import geopy.distance
 import maidenhead
+import mobile_codes
 
 parser = argparse.ArgumentParser(description='Generate MOTOTRBO zone files from BrandMeister.')
 
@@ -19,7 +20,8 @@ parser.add_argument('-b', '--band', choices=['vhf', 'uhf'], required=True, help=
 parser.add_argument('-t', '--type', choices=['mcc', 'qth', 'gps'], required=True,
                     help='Select repeaters by MCC code, QTH locator index or GPS coordinates.')
 
-parser.add_argument('-m', '--mcc', help='First repeater ID digits, usually a 3 digits MCC.')
+parser.add_argument('-m', '--mcc', help='First repeater ID digits, usually a 3 digits MCC. '
+                                        'You can also use a two letter country code instead.')
 parser.add_argument('-q', '--qth', help='QTH locator index like KO26BX.')
 
 parser.add_argument('-r', '--radius', default=100, type=int,
@@ -46,6 +48,9 @@ if args.type == 'qth':
     qth_coords = maidenhead.to_location(args.qth, center=True)
 if args.type == 'gps':
     qth_coords = (args.lat, args.lng)
+
+if args.mcc and not str(args.mcc).isdigit():
+    args.mcc = mobile_codes.alpha2(args.mcc)[4]
 
 
 def download_file():

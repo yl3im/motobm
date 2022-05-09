@@ -20,7 +20,7 @@ optional arguments:
                         Repeater band.
   -t {mcc,qth,gps}, --type {mcc,qth,gps}
                         Select repeaters by MCC code, QTH locator index or GPS coordinates.
-  -m MCC, --mcc MCC     First repeater ID digits, usually a 3 digits MCC.
+  -m MCC, --mcc MCC     First repeater ID digits, usually a 3 digits MCC. You can also use a two letter country code instead.
   -q QTH, --qth QTH     QTH locator index like KO26BX.
   -r RADIUS, --radius RADIUS
                         Area radius in kilometers around the center of the chosen QTH locator. Defaults to 100.
@@ -34,15 +34,19 @@ optional arguments:
 
 ## Examples
 
-`motobm.py -n 'Germany' -b vhf -t mcc -m 262 -6 -zc 16`
+`./motobm.py -n 'Germany' -b vhf -t mcc -m 262 -6 -zc 16`
 
 will create XML zone file(s) with all German repeaters for 2m band with 6 digit ID (real repeaters, not just hotspots), split to 16 channels per one zone.
 
-`motobm.py -n 'Paris' -b uhf -t qth -q JN18EU -r 150 -6`
+`./motobm.py -n 'Lithuania' -b uhf -t mcc -m LT -6`
+
+will create XML zone file(s) with all Lithuanian repeaters for 70 band with 6 digit ID (real repeaters, not just hotspots).
+
+`./motobm.py -n 'Paris' -b uhf -t qth -q JN18EU -r 150 -6`
 
 will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (real repeaters, not just hotspots) 150 kilometers around Paris.
 
-`motobm.py -n 'Stockholm' -b uhf -t gps -lat 59.225 -lon 18.250 -6`
+`./motobm.py -n 'Stockholm' -b uhf -t gps -lat 59.225 -lon 18.250 -6`
 
 will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (real repeaters, not just hotspots) 100 kilometers around Stockholm.
 
