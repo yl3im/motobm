@@ -78,7 +78,7 @@ def filter_list():
 
         if args.type == 'mcc':
             is_starts = False
-            
+
             if type(args.mcc) is list:
                 for mcc in args.mcc:
                     if item['repeaterid'].startswith(mcc):
@@ -119,12 +119,15 @@ def filter_list():
 
 
 def process_channels():
+    global output_list
+
     channel_chunks = [filtered_list[i:i + args.zone_capacity] for i in range(0, len(filtered_list), args.zone_capacity)]
     chunk_number = 0
 
     for chunk in channel_chunks:
         channels = ''
         chunk_number += 1
+        output_list = []
 
         for item in chunk:
             channels += format_channel(item)
