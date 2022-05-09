@@ -76,8 +76,19 @@ def filter_list():
                 args.band == 'uhf' and item['rx'].startswith('4'))):
             continue
 
-        if args.type == 'mcc' and not item['repeaterid'].startswith(args.mcc):
-            continue
+        if args.type == 'mcc':
+            is_starts = False
+            
+            if type(args.mcc) is list:
+                for mcc in args.mcc:
+                    if item['repeaterid'].startswith(mcc):
+                        is_starts = True
+            else:
+                if item['repeaterid'].startswith(args.mcc):
+                    is_starts = True
+
+            if not is_starts:
+                continue
 
         if (args.type == 'qth' or args.type == 'gps') and check_distance(qth_coords,
                                                                          (item['lat'], item['lng'])) > args.radius:
