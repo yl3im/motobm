@@ -133,7 +133,7 @@ def process_channels():
             channels += format_channel(item)
 
         print('\n',
-              tabulate(output_list, headers=['Callsign', 'RX', 'TX', 'CC', 'City', 'URL'], disable_numparse=True),
+              tabulate(output_list, headers=['Callsign', 'RX', 'TX', 'CC', 'City', 'Last seen', 'URL'], disable_numparse=True),
               '\n')
 
         if len(channel_chunks) == 1:
@@ -171,7 +171,7 @@ def format_channel(item):
     ch_tx = item['tx']
     ch_cc = item['colorcode']
 
-    output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'],
+    output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], item['last_updated'],
                         f"https://brandmeister.network/?page=repeater&id={item['repeaterid']}"])
 
     if item['rx'] == item['tx']:
