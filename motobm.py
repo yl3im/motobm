@@ -38,7 +38,7 @@ parser.add_argument('-zc', '--zone-capacity', default=160, type=int,
 
 args = parser.parse_args()
 
-bm_url = 'https://api.brandmeister.network/v1.0/repeater/?action=LIST'
+bm_url = 'https://api.brandmeister.network/v2/device'
 bm_file = 'BM.json'
 filtered_list = []
 output_list = []
@@ -81,10 +81,10 @@ def filter_list():
 
             if type(args.mcc) is list:
                 for mcc in args.mcc:
-                    if item['repeaterid'].startswith(mcc):
+                    if str(item['id']).startswith(mcc):
                         is_starts = True
             else:
-                if item['repeaterid'].startswith(args.mcc):
+                if str(item['id']).startswith(args.mcc):
                     is_starts = True
 
             if not is_starts:
@@ -97,11 +97,11 @@ def filter_list():
         if args.pep and (not str(item['pep']).isdigit() or str(item['pep']) == '0'):
             continue
 
-        if args.six and not len(item['repeaterid']) == 6:
+        if args.six and not len(str(item['id'])) == 6:
             continue
 
         if item['callsign'] == '':
-            item['callsign'] = item['repeaterid']
+            item['callsign'] = item['id']
 
         item['callsign'] = item['callsign'].split()[0]
 
@@ -133,7 +133,8 @@ def process_channels():
             channels += format_channel(item)
 
         print('\n',
-              tabulate(output_list, headers=['Callsign', 'RX', 'TX', 'CC', 'City', 'Last seen', 'URL'], disable_numparse=True),
+              tabulate(output_list, headers=['Callsign', 'RX', 'TX', 'CC', 'City', 'Last seen', 'URL'],
+                       disable_numparse=True),
               '\n')
 
         if len(channel_chunks) == 1:
@@ -171,8 +172,8 @@ def format_channel(item):
     ch_tx = item['tx']
     ch_cc = item['colorcode']
 
-    output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], item['last_updated'],
-                        f"https://brandmeister.network/?page=repeater&id={item['repeaterid']}"])
+    output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], item['last_seen'],
+                        f"https://brandmeister.network/?page=repeater&id={item['id']}"])
 
     if item['rx'] == item['tx']:
         return f'''
