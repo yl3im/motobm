@@ -51,6 +51,14 @@ will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (r
 
 will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (real repeaters, not just hotspots) 100 kilometers around Stockholm.
 
+In case your latitude and/or longitude have negative values, please refer them this way to avoid errors:
+
+`./motobm.py -n 'Minneapolis' -b uhf -t gps -lat 44.9570 -lon " -93.2780" -6`
+
+or
+
+`./motobm.py -n 'Minneapolis' -b uhf -t gps -lat 44.9570 -lon=-93.2780 -6`
+
 While creating zone file(s) the script will also output the list of found repeaters like this:
 
 ```
