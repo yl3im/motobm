@@ -71,7 +71,10 @@ def filter_list():
 
     f = open(bm_file, "r")
 
-    for item in json.loads(f.read()):
+    json_list = json.loads(f.read())
+    sorted_list = sorted(json_list, key=lambda k: (k['callsign'], int(k["id"])))
+
+    for item in sorted_list:
         if not ((args.band == 'vhf' and item['rx'].startswith('1')) or (
                 args.band == 'uhf' and item['rx'].startswith('4'))):
             continue
