@@ -3,12 +3,13 @@
 import argparse
 import json
 from os.path import exists
-from urllib import request
 from tabulate import tabulate
 
 import geopy.distance
 import maidenhead
 import mobile_codes
+import requests
+import urllib3
 
 parser = argparse.ArgumentParser(description='Generate MOTOTRBO zone files from BrandMeister.')
 
@@ -56,7 +57,15 @@ if args.mcc and not str(args.mcc).isdigit():
 def download_file():
     if not exists(bm_file) or args.force:
         print(f'Downloading from {bm_url}')
-        request.urlretrieve(bm_url, bm_file)
+
+        urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+        response = requests.get(bm_url, verify=False)
+        response.raise_for_status()
+
+        with open(bm_file, 'wb') as file:
+            file.write(response.content)
+
         print(f'Saved to {bm_file}')
 
 
