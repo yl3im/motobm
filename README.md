@@ -76,6 +76,7 @@ thus giving you additional insight.
 * Open the XML file contents in text editor, like Notepad.
 * Select All. Copy.
 * Open CPS2, on its left pane go to `Configuration` -> `Zone/Channel Assignment`, right-click on `Zone` and choose Paste.
+* Don't forget to set up the parameters for the new zone, like `Tx Contact Name` and `Rx Group List`. Can be done at once with `Fill Down` feature in CPS2.
 
 ## What about CPS16?
 
