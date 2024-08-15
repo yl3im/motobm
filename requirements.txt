@@ -1,7 +1,7 @@
-geographiclib
-geopy
-maidenhead
-mobile-codes
-requests
-tabulate
-urllib3
+geographiclib~=2.0
+geopy~=2.4.1
+maidenhead~=1.7.0
+mobile-codes~=0.7
+requests~=2.32.3
+tabulate~=0.9.0
+urllib3~=2.2.2
