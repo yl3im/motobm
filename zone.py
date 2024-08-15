@@ -10,7 +10,7 @@ from templatex import ZONE, CONVENTIONAL_PERSONALITY_RX_TX, CONVENTIONAL_PERSONA
 from utils import download_file, check_distance, write_text_file
 
 
-def parse_args():
+def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description='Generate MOTOTRBO zone files from BrandMeister.')
 
     parser.add_argument('-f', '--force', action='store_true',
@@ -40,7 +40,8 @@ def parse_args():
     return parser.parse_args()
 
 
-def filter_list(f_path, args, qth_coords: typing.Tuple[float, float]) -> typing.Tuple[typing.List[dict], dict]:
+def filter_list(f_path: str, args: argparse.Namespace, qth_coords: typing.Tuple[float, float]) -> typing.Tuple[
+    typing.List[dict], dict]:
     with open(f_path, "r") as f:
         json_list = json.load(f)
 
@@ -98,7 +99,7 @@ def filter_list(f_path, args, qth_coords: typing.Tuple[float, float]) -> typing.
     return filtered_list, existing
 
 
-def process_channels(args, filtered_list: typing.List[dict], existing: typing.Dict) -> None:
+def process_channels(args: argparse.Namespace, filtered_list: typing.List[dict], existing: typing.Dict) -> None:
     channel_chunks = [filtered_list[i:i + args.zone_capacity] for i in range(0, len(filtered_list), args.zone_capacity)]
     chunk_number = 0
 
