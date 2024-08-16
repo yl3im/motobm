@@ -1,3 +1,4 @@
+import typing
 from os.path import exists
 
 import geopy.distance
@@ -20,7 +21,7 @@ def download_file(f_path: str, url: str, overwrite: bool) -> bool:
     return True
 
 
-def check_distance(loc1, loc2):
+def calc_distance(loc1: typing.Tuple[float, float], loc2: typing.Tuple[float, float]) -> float:
     return geopy.distance.great_circle(loc1, loc2).km
 
 

@@ -7,7 +7,7 @@ import mobile_codes
 from tabulate import tabulate
 
 from templatex import ZONE, CONVENTIONAL_PERSONALITY_RX_TX, CONVENTIONAL_PERSONALITY
-from utils import download_file, check_distance, write_text_file
+from utils import download_file, calc_distance, write_text_file
 
 
 def parse_args() -> argparse.Namespace:
@@ -70,7 +70,7 @@ def filter_list(f_path: str, args: argparse.Namespace, qth_coords: typing.Tuple[
             if not is_starts:
                 continue
 
-        if (args.type in ['qth', 'gps']) and check_distance(qth_coords, (item['lat'], item['lng'])) > args.radius:
+        if (args.type in ['qth', 'gps']) and calc_distance(qth_coords, (item['lat'], item['lng'])) > args.radius:
             continue
 
         if args.pep and (not str(item['pep']).isdigit() or str(item['pep']) == '0'):
