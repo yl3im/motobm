@@ -147,13 +147,9 @@ def format_channel(item: typing.Dict, existing: typing.Dict, output_list: typing
         f"https://brandmeister.network/?page=repeater&id={item['id']}"
     ])
 
-    args = dict(
-        ch_alias=ch_alias, ch_cc=ch_cc, ch_rx=ch_rx, ch_tx=ch_tx
-    )
-
-    if item['rx'] == item['tx']:
-        return CONVENTIONAL_PERSONALITY_RX_TX.format(**args)
-    return CONVENTIONAL_PERSONALITY.format(**args)
+    template = CONVENTIONAL_PERSONALITY_RX_TX if item['rx'] == item['tx'] else CONVENTIONAL_PERSONALITY
+    template_args = dict(ch_alias=ch_alias, ch_cc=ch_cc, ch_rx=ch_rx, ch_tx=ch_tx)
+    return template.format(**template_args)
 
 
 def main():
