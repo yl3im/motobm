@@ -59,10 +59,11 @@ def filter_list(f_path: str, args: argparse.Namespace, qth_coords: typing.Tuple[
         if args.type == 'mcc':
             is_starts = False
 
-            if type(args.mcc) is list:
+            if isinstance(args.mcc, list):
                 for mcc in args.mcc:
                     if str(item['id']).startswith(mcc):
                         is_starts = True
+                        break
             else:
                 if str(item['id']).startswith(args.mcc):
                     is_starts = True
