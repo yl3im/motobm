@@ -85,11 +85,10 @@ def filter_list(f_path: str, args: argparse.Namespace, qth_coords: typing.Tuple[
 
         item['callsign'] = item['callsign'].split()[0]
 
-        if any(
-                (existing['rx'] == item['rx'] and
-                 existing['tx'] == item['tx'] and
-                 existing['callsign'] == item['callsign'])
-                for existing in filtered_list):
+        if any((existing['rx'] == item['rx'] and
+                existing['tx'] == item['tx'] and
+                existing['callsign'] == item['callsign'])
+               for existing in filtered_list):
             continue
 
         if not item['callsign'] in existing:
