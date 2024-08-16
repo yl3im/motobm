@@ -4,12 +4,14 @@ MOTOTRBO zone file generator from BrandMeister repeater list. It makes use of [B
 ## Installation
 
 * `git clone https://github.com/yl3im/motobm.git`
-* `pip install -r requirements.txt` as root or `pip install -r requirements.txt --user` as ordinary user.
+* `python -m venv ./motobm-env`
+* `source ./motobm-env/bin/activate`
+* `python -m pip install -r requirements.txt`
 
 ## Usage
 
 ```
-usage: ./zone.py [-h] [-f] -n NAME -b {vhf,uhf} -t {mcc,qth,gps} [-m MCC] [-q QTH] [-r RADIUS] [-lat LAT] [-lng LNG] [-p] [-6] [-zc ZONE_CAPACITY]
+usage: python zone.py [-h] [-f] -n NAME -b {vhf,uhf} -t {mcc,qth,gps} [-m MCC] [-q QTH] [-r RADIUS] [-lat LAT] [-lng LNG] [-p] [-6] [-zc ZONE_CAPACITY]
 
 Generate MOTOTRBO zone files from BrandMeister.
 
@@ -35,29 +37,29 @@ optional arguments:
 
 ## Examples
 
-`./zone.py -n 'Germany' -b vhf -t mcc -m 262 -6 -zc 16`
+`python zone.py -n 'Germany' -b vhf -t mcc -m 262 -6 -zc 16`
 
 will create XML zone file(s) with all German repeaters for 2m band with 6 digit ID (real repeaters, not just hotspots), split to 16 channels per one zone.
 
-`./zone.py -n 'Lithuania' -b uhf -t mcc -m LT -6`
+`python zone.py -n 'Lithuania' -b uhf -t mcc -m LT -6`
 
 will create XML zone file(s) with all Lithuanian repeaters for 70 band with 6 digit ID (real repeaters, not just hotspots).
 
-`./zone.py -n 'Paris' -b uhf -t qth -q JN18EU -r 150 -6`
+`python zone.py -n 'Paris' -b uhf -t qth -q JN18EU -r 150 -6`
 
 will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (real repeaters, not just hotspots) 150 kilometers around Paris.
 
-`./zone.py -n 'Stockholm' -b uhf -t gps -lat 59.225 -lon 18.250 -6`
+`python zone.py -n 'Stockholm' -b uhf -t gps -lat 59.225 -lon 18.250 -6`
 
 will create XML zone file(s) with all repeaters for 70cm band with 6 digit ID (real repeaters, not just hotspots) 100 kilometers around Stockholm.
 
 In case your latitude and/or longitude have negative values, please refer them this way to avoid errors:
 
-`./zone.py -n 'Minneapolis' -b uhf -t gps -lat 44.9570 -lon " -93.2780" -6`
+`python zone.py -n 'Minneapolis' -b uhf -t gps -lat 44.9570 -lon " -93.2780" -6`
 
 or
 
-`./zone.py -n 'Minneapolis' -b uhf -t gps -lat 44.9570 -lon=-93.2780 -6`
+`python zone.py -n 'Minneapolis' -b uhf -t gps -lat 44.9570 -lon=-93.2780 -6`
 
 While creating zone file(s) the script will also output the list of found repeaters like this:
 
