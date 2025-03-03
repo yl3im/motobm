@@ -132,7 +132,7 @@ def filter_list():
         if args.six and not len(str(item['id'])) == 6:
             continue
 
-        if args.callsign and (not args.callsign in item['callsign']):
+        if args.callsign and (not args.callsign in item['callsign'][:-1]):
             continue
 
         if item['callsign'] == '':
