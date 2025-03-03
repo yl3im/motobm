@@ -225,6 +225,9 @@ def format_channel(item):
   <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
   <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
   <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_TOT">180</field>
+  <field name="CP_INTRPTMSGDLY">510</field>
 {custom_values}
 </set>
     '''
@@ -247,6 +250,10 @@ def format_channel(item):
   <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
   <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
   <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_ARSPLUS" Name="On System/Site Change">ARS_SYS_SITE_CHANGE</field>
+  <field name="CP_TOT">180</field>
+  <field name="CP_INTRPTMSGDLY">510</field>
 {custom_values}
 </set>
 <set name="ConventionalPersonality" alias="{ch_alias} TS2" key="DGTLCONV6PT25">
@@ -266,6 +273,10 @@ def format_channel(item):
   <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
   <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
   <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+  <field name="CP_MLTSTPSNLTIND">True</field>
+  <field name="CP_ARSPLUS" Name="On System/Site Change">ARS_SYS_SITE_CHANGE</field>
+  <field name="CP_TOT">180</field>
+  <field name="CP_INTRPTMSGDLY">510</field>
 {custom_values}
 </set>
     '''
