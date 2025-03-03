@@ -9,11 +9,11 @@ MOTOTRBO zone file generator from BrandMeister repeater list. It makes use of [B
 ## Usage
 
 ```
-usage: ./zone.py [-h] [-f] -n NAME -b {vhf,uhf} -t {mcc,qth,gps} [-m MCC] [-q QTH] [-r RADIUS] [-lat LAT] [-lng LNG] [-p] [-6] [-zc ZONE_CAPACITY]
+usage: zone.py [-h] [-f] -n NAME -b {vhf,uhf} -t {mcc,qth,gps} [-m MCC] [-q QTH] [-r RADIUS] [-lat LAT] [-lng LNG] [-p] [-6] [-zc ZONE_CAPACITY] [-c]
 
 Generate MOTOTRBO zone files from BrandMeister.
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   -f, --force           Forcibly download repeater list even if it exists locally.
   -n NAME, --name NAME  Zone name. Choose it freely on your own.
@@ -31,6 +31,7 @@ optional arguments:
   -6, --six             Only select repeaters with 6 digit ID.
   -zc ZONE_CAPACITY, --zone-capacity ZONE_CAPACITY
                         Channel capacity within zone. 160 by default as for top models, use 16 for the lite and non-display ones.
+  -c, --customize       Include customized values for each channel.
 ```
 
 ## Examples

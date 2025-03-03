@@ -11,6 +11,7 @@ import mobile_codes
 import requests
 import urllib3
 
+
 parser = argparse.ArgumentParser(description='Generate MOTOTRBO zone files from BrandMeister.')
 
 parser.add_argument('-f', '--force', action='store_true',
@@ -36,14 +37,19 @@ parser.add_argument('-6', '--six', action='store_true', help='Only select repeat
 parser.add_argument('-zc', '--zone-capacity', default=160, type=int,
                     help='Channel capacity within zone. 160 by default as for top models, use 16 for the lite and '
                          'non-display ones.')
+parser.add_argument('-c', '--customize', action='store_true',
+                    help='Include customized values for each channel.')
 
 args = parser.parse_args()
+
 
 bm_url = 'https://api.brandmeister.network/v2/device'
 bm_file = 'BM.json'
 filtered_list = []
 output_list = []
 existing = {}
+custom_file = 'custom-values.xml'
+custom_values = ''
 
 if args.type == 'qth':
     qth_coords = maidenhead.to_location(args.qth, center=True)
@@ -52,6 +58,18 @@ if args.type == 'gps':
 
 if args.mcc and not str(args.mcc).isdigit():
     args.mcc = mobile_codes.alpha2(args.mcc)[4]
+
+
+def check_custom():
+    global custom_file
+    global custom_values
+
+    if not exists(custom_file):
+        with open(custom_file, 'w') as file:
+            file.write('')
+
+    with open(custom_file, 'r') as file:
+        custom_values = file.read()
 
 
 def download_file():
@@ -174,6 +192,7 @@ def process_channels():
 def format_channel(item):
     global existing
     global output_list
+    global custom_values
 
     if existing[item['callsign']] == 1:
         ch_alias = item['callsign']
@@ -206,6 +225,7 @@ def format_channel(item):
   <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
   <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
   <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+{custom_values}
 </set>
     '''
 
@@ -227,6 +247,7 @@ def format_channel(item):
   <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
   <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
   <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+{custom_values}
 </set>
 <set name="ConventionalPersonality" alias="{ch_alias} TS2" key="DGTLCONV6PT25">
   <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
@@ -245,6 +266,7 @@ def format_channel(item):
   <field name="CP_MYCALLADCRTR" Name="Follow Admit Criteria">FOLLOW_ADMIT_CRITERIA</field>
   <field name="CP_TEXTMESSAGETYPE" Name="Advantage">TMS</field>
   <field name="CP_TRANSMITINTERRUPTTYPE" Name="Advantage">PROPRIETARY</field>
+{custom_values}
 </set>
     '''
 
@@ -258,6 +280,8 @@ def write_zone_file(zone_alias, contents):
 
 
 if __name__ == '__main__':
+    if args.customize:
+        check_custom()
     download_file()
     filter_list()
     process_channels()
