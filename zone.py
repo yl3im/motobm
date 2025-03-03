@@ -39,6 +39,8 @@ parser.add_argument('-zc', '--zone-capacity', default=160, type=int,
                          'non-display ones.')
 parser.add_argument('-c', '--customize', action='store_true',
                     help='Include customized values for each channel.')
+parser.add_argument('-cs', '--callsign', help='Only list callsigns containing specified string like a region number.')
+
 
 args = parser.parse_args()
 
@@ -128,6 +130,9 @@ def filter_list():
             continue
 
         if args.six and not len(str(item['id'])) == 6:
+            continue
+
+        if args.callsign and (not args.callsign in item['callsign']):
             continue
 
         if item['callsign'] == '':
