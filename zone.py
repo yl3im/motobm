@@ -40,6 +40,7 @@ parser.add_argument('-zc', '--zone-capacity', default=160, type=int,
 parser.add_argument('-c', '--customize', action='store_true',
                     help='Include customized values for each channel.')
 parser.add_argument('-cs', '--callsign', help='Only list callsigns containing specified string like a region number.')
+parser.add_argument('-js', '--javascript', action='store_true', help='Only produce JS map.')
 
 
 args = parser.parse_args()
@@ -295,9 +296,27 @@ def write_zone_file(zone_alias, contents):
     print(f'Zone file "{zone_file_name}" written.\n')
 
 
+def create_js():
+    global filtered_list
+
+    for item in filtered_list:
+        print(f'''        {{
+          city: "{item['city']}",
+          callsign: "{item['callsign']}",
+          tx: "{item['tx']}",
+          rx: "{item['rx']}",
+          cc: "{item['colorcode']}",
+          coords: [{item['lat']}, {item['lng']}],
+          dmrid: {item['id']},
+        }},''')
+
+
 if __name__ == '__main__':
     if args.customize:
         check_custom()
     download_file()
     filter_list()
-    process_channels()
+    if args.javascript:
+        create_js()
+    else:
+        process_channels()
