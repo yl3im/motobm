@@ -105,9 +105,10 @@ def filter_list():
     sorted_list = sorted(json_list, key=lambda k: (k['callsign'], int(k["id"])))
 
     for item in sorted_list:
-        if not ((args.band == 'vhf' and item['rx'].startswith('1')) or (
-                args.band == 'uhf' and item['rx'].startswith('4'))):
-            continue
+        if not args.javascript:
+            if not ((args.band == 'vhf' and item['rx'].startswith('1')) or (
+                    args.band == 'uhf' and item['rx'].startswith('4'))):
+                continue
 
         if args.type == 'mcc':
             is_starts = False
