@@ -105,28 +105,30 @@ def filter_list():
     sorted_list = sorted(json_list, key=lambda k: (k['callsign'], int(k["id"])))
 
     for item in sorted_list:
+
+        # Ignore location in JS mode.
         if not args.javascript:
             if not ((args.band == 'vhf' and item['rx'].startswith('1')) or (
                     args.band == 'uhf' and item['rx'].startswith('4'))):
                 continue
 
-        if args.type == 'mcc':
-            is_starts = False
+            if args.type == 'mcc':
+                is_starts = False
 
-            if type(args.mcc) is list:
-                for mcc in args.mcc:
-                    if str(item['id']).startswith(mcc):
+                if type(args.mcc) is list:
+                    for mcc in args.mcc:
+                        if str(item['id']).startswith(mcc):
+                            is_starts = True
+                else:
+                    if str(item['id']).startswith(args.mcc):
                         is_starts = True
-            else:
-                if str(item['id']).startswith(args.mcc):
-                    is_starts = True
 
-            if not is_starts:
+                if not is_starts:
+                    continue
+
+            if (args.type == 'qth' or args.type == 'gps') and check_distance(qth_coords,
+                                                                             (item['lat'], item['lng'])) > args.radius:
                 continue
-
-        if (args.type == 'qth' or args.type == 'gps') and check_distance(qth_coords,
-                                                                         (item['lat'], item['lng'])) > args.radius:
-            continue
 
         if args.pep and (not str(item['pep']).isdigit() or str(item['pep']) == '0'):
             continue
@@ -301,8 +303,11 @@ def create_js():
     global filtered_list
 
     for item in filtered_list:
+        if (not item['lat']) or (not item['lng']):
+            continue
+        if (str(item['id']).startswith('247')):
+            continue
         print(f'''        {{
-          city: "{item['city']}",
           callsign: "{item['callsign']}",
           tx: "{item['tx']}",
           rx: "{item['rx']}",
