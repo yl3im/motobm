@@ -308,12 +308,12 @@ def create_js():
         if (str(item['id']).startswith('247')):
             continue
         print(f'''        {{
-          callsign: "{item['callsign']}",
+          cs: "{item['callsign']}",
           tx: "{item['tx']}",
           rx: "{item['rx']}",
           cc: "{item['colorcode']}",
-          coords: [{item['lat']}, {item['lng']}],
-          dmrid: {item['id']},
+          cr: [{item['lat']}, {item['lng']}],
+          di: {item['id']},
         }},''')
 
 
