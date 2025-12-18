@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse
+from datetime import datetime, timezone
 import json
 from os.path import exists
 from tabulate import tabulate
@@ -91,6 +92,14 @@ def download_file():
 
 def check_distance(loc1, loc2):
     return geopy.distance.great_circle(loc1, loc2).km
+
+
+def local_datetime(last_seen: str) -> str:
+    utc_dt = datetime.strptime(
+        last_seen, "%Y-%m-%d %H:%M:%S"
+    ).replace(tzinfo=timezone.utc)
+
+    return utc_dt.astimezone().strftime("%Y-%m-%d %H:%M:%S")
 
 
 def filter_list():
@@ -208,7 +217,7 @@ def format_channel(item):
     ch_tx = item['tx']
     ch_cc = item['colorcode']
 
-    output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], item['last_seen'],
+    output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], local_datetime(item['last_seen']),
                         f"https://brandmeister.network/?page=repeater&id={item['id']}"])
 
     if item['rx'] == item['tx']:
