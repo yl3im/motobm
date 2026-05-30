@@ -61,16 +61,9 @@ an invalid two-letter code throws an unhandled exception.
 Fix: use the named field (`.mcc`) and catch the lookup failure with a friendly
 "unknown country code" message.
 
-### 6. `verify=False` disables TLS verification
-`zone.py:82-84`
-
-Globally silences cert warnings and skips verification. If it's only needed for the
-BM cert quirk, consider trying verified first and falling back, or at least
-documenting why.
-
 ## Code quality / maintainability
 
-### 7. ~90% duplicated XML templates
+### 6. ~90% duplicated XML templates
 `zone.py:224-296`
 
 The simplex, TS1, and TS2 blocks repeat nearly every field, and have already diverged:
@@ -78,14 +71,14 @@ The simplex, TS1, and TS2 blocks repeat nearly every field, and have already div
 intentional? Parameterizing a single template (slot, alias suffix, optional ARS) would
 shrink the file and prevent further drift.
 
-### 8. Import-time side effects
+### 7. Import-time side effects
 `zone.py:46-63`
 
 Argument parsing and `qth_coords`/`mcc` computation run at module top level, so the
 file can't be imported or tested without `sys.argv`. Moving this into `main()` would
 make it testable.
 
-### 9. Smaller items
+### 8. Smaller items
 - Bare `open`/`close` in `filter_list` (110, 162) and `write_zone_file` (301-303) — use `with`.
 - `type(args.mcc) is list` (123) → `isinstance(args.mcc, list)`.
 - `-zc 0` or negative → `range(..., 0)` raises `ValueError`; add a bounds check.
@@ -97,5 +90,9 @@ make it testable.
 1. **2 (XML escaping)** and **1 (arg validation)** — done.
 2. **3** — data-dependent crash on coordinate-less repeaters.
 3. **4** — performance + clarity cleanup.
-4. **7 / 8** — larger refactor for a later pass.
-</content>
+4. **6 / 7** — larger refactor for a later pass.
+
+## Notes / deliberate behavior (not bugs)
+
+- `verify=False` on the BrandMeister download (`zone.py:82-84`) is **intentional** —
+  the upstream API cert is the reason. Leave it as is.
