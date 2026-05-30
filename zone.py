@@ -53,6 +53,8 @@ if args.type == 'qth' and not args.qth:
     parser.error('-t qth requires -q/--qth.')
 if args.type == 'gps' and (args.lat is None or args.lng is None):
     parser.error('-t gps requires both -lat and -lng/-lon.')
+if args.zone_capacity < 1:
+    parser.error('-zc/--zone-capacity must be a positive integer.')
 
 
 bm_url = 'https://api.brandmeister.network/v2/device'
