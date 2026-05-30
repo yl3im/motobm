@@ -52,7 +52,7 @@ Bonus: the loop variable is also named `existing`, shadowing the global counter 
 on line 53. It happens to be safe (generator expressions have their own scope) but
 it's confusing and a refactoring hazard.
 
-### 5. Magic index into `mobile_codes`
+### 5. Magic index into `mobile_codes`  ✅ DONE (branch claude-fixes)
 `zone.py:62-63`
 
 `mobile_codes.alpha2(args.mcc)[4]` relies on the namedtuple's positional layout, and

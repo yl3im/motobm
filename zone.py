@@ -69,7 +69,11 @@ if args.type == 'gps':
     qth_coords = (args.lat, args.lng)
 
 if args.mcc and not str(args.mcc).isdigit():
-    args.mcc = mobile_codes.alpha2(args.mcc)[4]
+    try:
+        args.mcc = mobile_codes.alpha2(args.mcc).mcc
+    except KeyError:
+        parser.error(f"unknown country code '{args.mcc}'; use a 2-letter ISO code (e.g. LV) "
+                     f"or a numeric MCC prefix.")
 
 
 def check_custom():
