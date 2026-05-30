@@ -2,6 +2,15 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git workflow
+
+- **Never `git commit` or `git push` without the user's explicit consent.** Do the work,
+  then stop and ask.
+- When asking, show the list of changed files (e.g. `git status` / `git diff --stat`)
+  alongside the question so the user can see exactly what would be committed.
+- Only commit and push after the user explicitly says yes. A "yes" approves that one
+  set of changes — ask again for the next commit.
+
 ## What this is
 
 A single-file Python CLI (`zone.py`) that downloads the BrandMeister DMR repeater
@@ -73,5 +82,3 @@ additionally drops repeaters with no coordinates and any id starting with `247`.
 - `BM.json`, `a.json`, `b.json` are large downloaded data snapshots, not source.
 - Output XML is import-only; CPS16 cannot paste XML, so this targets CPS2
   (radio firmware R2.10+).
-</content>
-</invoke>
