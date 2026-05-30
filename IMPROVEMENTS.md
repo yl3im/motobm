@@ -71,10 +71,9 @@ file can't be imported or tested without `sys.argv`. Moving this into `main()` w
 make it testable.
 
 ### 7. Smaller items
-- Bare `open`/`close` in `filter_list` (110, 162) and `write_zone_file` (301-303) — use `with`.
-- `type(args.mcc) is list` (123) → `isinstance(args.mcc, list)`.
+- ✅ DONE (branch claude-fixes): bare `open`/`close` in `filter_list` and `write_zone_file` now use `with`.
+- ✅ DONE (branch claude-fixes): `type(args.mcc) is list` → `isinstance(args.mcc, list)`.
 - ✅ DONE (branch claude-fixes): `-zc 0` or negative now rejected with a clear message (was `range(..., 0)` ValueError).
-- Band detection via `rx.startswith('1')`/`'4'` (116-117) is crude but works for 2m/70cm; worth a comment.
 - ✅ DONE (branch claude-fixes): warn when `BM.json` is more than 7 days old so users know to `-f`.
 
 ## Suggested priority order
@@ -90,3 +89,5 @@ make it testable.
   the upstream API cert is the reason. Leave it as is.
 - The simplex / TS1 / TS2 XML templates (`zone.py:224-296`) are **intentionally**
   separate, including `CP_ARSPLUS` only on the duplex blocks. Don't deduplicate them.
+- Band detection via `rx.startswith('1')`/`'4'` (`zone.py:116-117`) is **intentional** —
+  leave the VHF/UHF check as is.

@@ -138,9 +138,9 @@ def filter_list():
     global existing
     global qth_coords
 
-    f = open(bm_file, "r")
+    with open(bm_file, "r") as f:
+        json_list = json.loads(f.read())
 
-    json_list = json.loads(f.read())
     sorted_list = sorted(json_list, key=lambda k: (k['callsign'], int(k["id"])))
 
     seen = set()
@@ -153,7 +153,7 @@ def filter_list():
         if args.type == 'mcc':
             is_starts = False
 
-            if type(args.mcc) is list:
+            if isinstance(args.mcc, list):
                 for mcc in args.mcc:
                     if str(item['id']).startswith(mcc):
                         is_starts = True
@@ -194,8 +194,6 @@ def filter_list():
         item['turn'] = existing[item['callsign']]
 
         filtered_list.append(item)
-
-    f.close()
 
 
 def process_channels():
@@ -342,9 +340,8 @@ def format_channel(item):
 
 def write_zone_file(zone_alias, contents):
     zone_file_name = zone_alias + ".xml"
-    zone_file = open(zone_file_name, "wt")
-    zone_file.write(contents)
-    zone_file.close()
+    with open(zone_file_name, "wt") as zone_file:
+        zone_file.write(contents)
     print(f'Zone file "{zone_file_name}" written.\n')
 
 
