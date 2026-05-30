@@ -141,6 +141,8 @@ def filter_list():
     json_list = json.loads(f.read())
     sorted_list = sorted(json_list, key=lambda k: (k['callsign'], int(k["id"])))
 
+    seen = set()
+
     for item in sorted_list:
         if not ((args.band == 'vhf' and item['rx'].startswith('1')) or (
                 args.band == 'uhf' and item['rx'].startswith('4'))):
@@ -180,9 +182,10 @@ def filter_list():
 
         item['callsign'] = item['callsign'].split()[0]
 
-        if any((existing['rx'] == item['rx'] and existing['tx'] == item['tx'] and existing['callsign'] == item[
-            'callsign']) for existing in filtered_list):
+        key = (item['rx'], item['tx'], item['callsign'])
+        if key in seen:
             continue
+        seen.add(key)
 
         if not item['callsign'] in existing: existing[item['callsign']] = 0
         existing[item['callsign']] += 1

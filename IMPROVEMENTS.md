@@ -37,7 +37,7 @@ Fix: guard that skips coordinate-less repeaters.
 
 ## Robustness / performance
 
-### 4. O(n^2) deduplication
+### 4. O(n^2) deduplication  ✅ DONE (branch claude-fixes)
 `zone.py:152-154`
 
 ```python
