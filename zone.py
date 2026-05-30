@@ -4,6 +4,7 @@ import argparse
 from datetime import datetime, timezone
 import json
 from os.path import exists
+from xml.sax.saxutils import escape
 from tabulate import tabulate
 
 import geopy.distance
@@ -44,6 +45,13 @@ parser.add_argument('-cs', '--callsign', help='Only list callsigns containing sp
 
 
 args = parser.parse_args()
+
+if args.type == 'mcc' and not args.mcc:
+    parser.error('-t mcc requires -m/--mcc.')
+if args.type == 'qth' and not args.qth:
+    parser.error('-t qth requires -q/--qth.')
+if args.type == 'gps' and (args.lat is None or args.lng is None):
+    parser.error('-t gps requires both -lat and -lng/-lon.')
 
 
 bm_url = 'https://api.brandmeister.network/v2/device'
@@ -90,8 +98,20 @@ def download_file():
         print(f'Saved to {bm_file}')
 
 
+def xml_escape(value):
+    return escape(str(value), {'"': '&quot;', "'": '&apos;'})
+
+
 def check_distance(loc1, loc2):
     return geopy.distance.great_circle(loc1, loc2).km
+
+
+def has_coords(item):
+    # BrandMeister uses null or 0/'0' as a "no location" placeholder; treat those as missing.
+    try:
+        return float(item['lat']) != 0 and float(item['lng']) != 0
+    except (TypeError, ValueError):
+        return False
 
 
 def local_datetime(last_seen: str) -> str:
@@ -131,9 +151,11 @@ def filter_list():
             if not is_starts:
                 continue
 
-        if (args.type == 'qth' or args.type == 'gps') and check_distance(qth_coords,
-                                                                         (item['lat'], item['lng'])) > args.radius:
-            continue
+        if args.type == 'qth' or args.type == 'gps':
+            if not has_coords(item):
+                continue
+            if check_distance(qth_coords, (float(item['lat']), float(item['lng']))) > args.radius:
+                continue
 
         if args.pep and (not str(item['pep']).isdigit() or str(item['pep']) == '0'):
             continue
@@ -186,14 +208,16 @@ def process_channels():
         else:
             zone_alias = f'{args.name} #{chunk_number}'
 
+        zone_alias_xml = xml_escape(zone_alias)
+
         write_zone_file(zone_alias, f'''<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <config>
   <category name="Zone">
-    <set name="Zone" alias="{zone_alias}" key="NORMAL">
+    <set name="Zone" alias="{zone_alias_xml}" key="NORMAL">
       <collection name="ZoneItems">
         {channels}
       </collection>
-      <field name="ZP_ZONEALIAS">{zone_alias}</field>
+      <field name="ZP_ZONEALIAS">{zone_alias_xml}</field>
       <field name="ZP_ZONETYPE" Name="Normal">NORMAL</field>
       <field name="ZP_ZVFNLITEM" Name="None">NONE</field>
       <field name="Comments"></field>
@@ -219,6 +243,12 @@ def format_channel(item):
 
     output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], local_datetime(item['last_seen']),
                         f"https://brandmeister.network/?page=repeater&id={item['id']}"])
+
+    # Escape values interpolated into the XML below; the table row above keeps the raw values.
+    ch_alias = xml_escape(ch_alias)
+    ch_rx = xml_escape(ch_rx)
+    ch_tx = xml_escape(ch_tx)
+    ch_cc = xml_escape(ch_cc)
 
     if item['rx'] == item['tx']:
         return f'''
