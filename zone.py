@@ -3,7 +3,8 @@
 import argparse
 from datetime import datetime, timezone
 import json
-from os.path import exists
+from os.path import exists, getmtime
+import time
 from xml.sax.saxutils import escape
 from tabulate import tabulate
 
@@ -96,6 +97,10 @@ def download_file():
             file.write(response.content)
 
         print(f'Saved to {bm_file}')
+    else:
+        age_days = (time.time() - getmtime(bm_file)) / 86400
+        if age_days > 7:
+            print(f'Warning: {bm_file} is {age_days:.0f} days old. Use -f to download a fresh copy.')
 
 
 def xml_escape(value):

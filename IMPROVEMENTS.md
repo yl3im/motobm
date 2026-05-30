@@ -90,7 +90,7 @@ make it testable.
 - `type(args.mcc) is list` (123) → `isinstance(args.mcc, list)`.
 - `-zc 0` or negative → `range(..., 0)` raises `ValueError`; add a bounds check.
 - Band detection via `rx.startswith('1')`/`'4'` (116-117) is crude but works for 2m/70cm; worth a comment.
-- Optional: warn when `BM.json` is stale (old mtime) so users know to `-f`.
+- ✅ DONE (branch claude-fixes): warn when `BM.json` is more than 7 days old so users know to `-f`.
 
 ## Suggested priority order
 
