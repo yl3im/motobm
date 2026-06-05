@@ -67,9 +67,9 @@ While creating zone file(s) the script will also output the list of found repeat
 ```
  Callsign    RX        TX        CC    City                    URL
 ----------  --------  --------  ----  ----------------------  -----------------------------------------------------
-DB0DVR      144.9875  145.5875  1     Braunschweig  (JO52FF)  https://brandmeister.network/?page=repeater&id=262386
-DB0HE       144.8250  144.8250  1     Herten, JO31NO          https://brandmeister.network/?page=repeater&id=262443
-DB0KI       144.8750  144.8750  2     Kniebis                 https://brandmeister.network/?page=repeater&id=262010
+DB0DVR      144.9875  145.5875  1     Braunschweig  (JO52FF)  https://brandmeister.network/?page=device&id=262386
+DB0HE       144.8250  144.8250  1     Herten, JO31NO          https://brandmeister.network/?page=device&id=262443
+DB0KI       144.8750  144.8750  2     Kniebis                 https://brandmeister.network/?page=device&id=262010
 ```
 
 thus giving you additional insight.

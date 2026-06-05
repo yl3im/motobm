@@ -47,6 +47,8 @@ parser.add_argument('-cs', '--callsign', help='Only list callsigns containing sp
 
 args = parser.parse_args()
 
+# argparse can't express "this option is required only for this --type", so enforce
+# the per-type requirements here after parsing.
 if args.type == 'mcc' and not args.mcc:
     parser.error('-t mcc requires -m/--mcc.')
 if args.type == 'qth' and not args.qth:
@@ -57,6 +59,11 @@ if args.zone_capacity < 1:
     parser.error('-zc/--zone-capacity must be a positive integer.')
 
 
+# Module-level state shared across functions via `global` (see CLAUDE.md):
+# filtered_list  - repeaters kept after filtering
+# output_list    - rows for the per-zone summary table
+# existing       - count of repeaters per callsign, used to add #N suffixes
+# custom_values  - contents of custom-values.xml spliced into each channel
 bm_url = 'https://api.brandmeister.network/v2/device'
 bm_file = 'BM.json'
 filtered_list = []
@@ -65,11 +72,15 @@ existing = {}
 custom_file = 'custom-values.xml'
 custom_values = ''
 
+# Resolve the search centre once up front: from the QTH locator's centre, or from
+# the explicit GPS pair. Used by the distance filter in filter_list().
 if args.type == 'qth':
     qth_coords = maidenhead.to_location(args.qth, center=True)
 if args.type == 'gps':
     qth_coords = (args.lat, args.lng)
 
+# -m/--mcc accepts a numeric prefix or a 2-letter country code; translate the
+# latter to its MCC(s) (mcc may be a list for countries with several).
 if args.mcc and not str(args.mcc).isdigit():
     try:
         args.mcc = mobile_codes.alpha2(args.mcc).mcc
@@ -79,6 +90,8 @@ if args.mcc and not str(args.mcc).isdigit():
 
 
 def check_custom():
+    # Load the optional custom-values.xml snippet (-c/--customize). Create it empty
+    # if missing so the run never fails on a first use.
     global custom_file
     global custom_values
 
@@ -91,9 +104,13 @@ def check_custom():
 
 
 def download_file():
+    # Fetch the BrandMeister device list, but only when it's missing or -f/--force
+    # is given; otherwise reuse the cached BM.json to avoid re-downloading.
     if not exists(bm_file) or args.force:
         print(f'Downloading from {bm_url}')
 
+        # TLS verification is intentionally disabled (upstream cert issue); silence
+        # the resulting urllib3 warning. See CLAUDE.md.
         urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
         response = requests.get(bm_url, verify=False)
@@ -104,16 +121,20 @@ def download_file():
 
         print(f'Saved to {bm_file}')
     else:
+        # Cached copy reused: warn if it's stale so the user knows to pass -f.
         age_days = (time.time() - getmtime(bm_file)) / 86400
         if age_days > 7:
             print(f'Warning: {bm_file} is {age_days:.0f} days old. Use -f to download a fresh copy.')
 
 
 def xml_escape(value):
+    # Escape &, <, > plus quotes/apostrophes so values are safe inside XML
+    # attributes and elements (channels are built by string interpolation).
     return escape(str(value), {'"': '&quot;', "'": '&apos;'})
 
 
 def check_distance(loc1, loc2):
+    # Great-circle distance in km between two (lat, lng) pairs.
     return geopy.distance.great_circle(loc1, loc2).km
 
 
@@ -126,6 +147,8 @@ def has_coords(item):
 
 
 def local_datetime(last_seen: str) -> str:
+    # The API reports last_seen in UTC; convert it to the machine's local time
+    # for display in the summary table.
     utc_dt = datetime.strptime(
         last_seen, "%Y-%m-%d %H:%M:%S"
     ).replace(tzinfo=timezone.utc)
@@ -134,6 +157,8 @@ def local_datetime(last_seen: str) -> str:
 
 
 def filter_list():
+    # Read BM.json and build filtered_list by applying every active filter, then
+    # deduplicating and tagging each kept repeater with its per-callsign count.
     global filtered_list
     global existing
     global qth_coords
@@ -141,15 +166,20 @@ def filter_list():
     with open(bm_file, "r") as f:
         json_list = json.loads(f.read())
 
+    # Stable order: group by callsign, then by numeric id within a callsign.
     sorted_list = sorted(json_list, key=lambda k: (k['callsign'], int(k["id"])))
 
     seen = set()
 
     for item in sorted_list:
+        # Band filter: VHF repeaters have RX starting with 1, UHF with 4. Deliberate;
+        # see CLAUDE.md / band-detection memory.
         if not ((args.band == 'vhf' and item['rx'].startswith('1')) or (
                 args.band == 'uhf' and item['rx'].startswith('4'))):
             continue
 
+        # MCC filter: keep only repeaters whose id starts with the requested prefix.
+        # args.mcc may be a list (country code resolving to several MCCs).
         if args.type == 'mcc':
             is_starts = False
 
@@ -164,31 +194,42 @@ def filter_list():
             if not is_starts:
                 continue
 
+        # Location filter: drop repeaters without coordinates, then any outside the
+        # requested radius around the QTH/GPS centre.
         if args.type == 'qth' or args.type == 'gps':
             if not has_coords(item):
                 continue
             if check_distance(qth_coords, (float(item['lat']), float(item['lng']))) > args.radius:
                 continue
 
+        # -p/--pep: keep only repeaters that advertise a non-zero power value.
         if args.pep and (not str(item['pep']).isdigit() or str(item['pep']) == '0'):
             continue
 
+        # -6/--six: keep only repeaters with a 6-digit (i.e. full) DMR ID.
         if args.six and not len(str(item['id'])) == 6:
             continue
 
+        # -cs/--callsign: keep only callsigns containing the given substring. The
+        # [:-1] slice is intentional; see callsign-filter-slice memory.
         if args.callsign and (not args.callsign in item['callsign'][:-1]):
             continue
 
+        # Fall back to the numeric id when a repeater has no callsign, then keep only
+        # the first whitespace-delimited token of the callsign.
         if item['callsign'] == '':
             item['callsign'] = item['id']
 
         item['callsign'] = item['callsign'].split()[0]
 
+        # Deduplicate on (rx, tx, callsign): the same repeater can appear more than once.
         key = (item['rx'], item['tx'], item['callsign'])
         if key in seen:
             continue
         seen.add(key)
 
+        # Track how many repeaters share this callsign; `turn` is this one's index,
+        # used later to append a #N suffix when there's more than one.
         if not item['callsign'] in existing: existing[item['callsign']] = 0
         existing[item['callsign']] += 1
         item['turn'] = existing[item['callsign']]
@@ -197,6 +238,8 @@ def filter_list():
 
 
 def process_channels():
+    # Split filtered_list into zones of --zone-capacity channels and write one XML
+    # file per chunk, printing a summary table for each.
     global output_list
 
     channel_chunks = [filtered_list[i:i + args.zone_capacity] for i in range(0, len(filtered_list), args.zone_capacity)]
@@ -205,7 +248,7 @@ def process_channels():
     for chunk in channel_chunks:
         channels = ''
         chunk_number += 1
-        output_list = []
+        output_list = []  # reset table rows; format_channel() appends to it per repeater
 
         for item in chunk:
             channels += format_channel(item)
@@ -215,6 +258,7 @@ def process_channels():
                        disable_numparse=True),
               '\n')
 
+        # A single chunk keeps the plain zone name; multiple chunks get a #N suffix.
         if len(channel_chunks) == 1:
             zone_alias = args.name
         else:
@@ -240,10 +284,12 @@ def process_channels():
 
 
 def format_channel(item):
+    # Build the CPS2 XML for one repeater and record a row for the summary table.
     global existing
     global output_list
     global custom_values
 
+    # Unique callsign keeps its bare alias; shared callsigns get a #N suffix.
     if existing[item['callsign']] == 1:
         ch_alias = item['callsign']
     else:
@@ -254,7 +300,7 @@ def format_channel(item):
     ch_cc = item['colorcode']
 
     output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], local_datetime(item['last_seen']),
-                        f"https://brandmeister.network/?page=repeater&id={item['id']}"])
+                        f"https://brandmeister.network/?page=device&id={item['id']}"])
 
     # Escape values interpolated into the XML below; the table row above keeps the raw values.
     ch_alias = xml_escape(ch_alias)
@@ -262,6 +308,10 @@ def format_channel(item):
     ch_tx = xml_escape(ch_tx)
     ch_cc = xml_escape(ch_cc)
 
+    # Simplex/hotspot (rx == tx): emit a single SLOT2 personality. A duplex
+    # repeater instead emits the paired TS1/TS2 personalities below. Note TXFREQ
+    # is fed from rx and RXFREQ from tx: the radio transmits on the repeater's
+    # input and listens on its output.
     if item['rx'] == item['tx']:
         return f'''
 <set name="ConventionalPersonality" alias="{ch_alias}" key="DGTLCONV6PT25">
@@ -288,6 +338,9 @@ def format_channel(item):
 </set>
     '''
 
+    # Duplex repeater: one personality per timeslot (TS1 = SLOT1, TS2 = SLOT2).
+    # These blocks are intentionally kept separate rather than deduplicated; see
+    # xml-templates-separate memory.
     return f'''
 <set name="ConventionalPersonality" alias="{ch_alias} TS1" key="DGTLCONV6PT25">
   <field name="CP_PERSTYPE" Name="Digital">DGTLCONV6PT25</field>
@@ -339,6 +392,7 @@ def format_channel(item):
 
 
 def write_zone_file(zone_alias, contents):
+    # Write one zone's XML to "<alias>.xml" for import into CPS2.
     zone_file_name = zone_alias + ".xml"
     with open(zone_file_name, "wt") as zone_file:
         zone_file.write(contents)
@@ -346,6 +400,7 @@ def write_zone_file(zone_alias, contents):
 
 
 if __name__ == '__main__':
+    # Pipeline: optionally load custom values, fetch the list, filter it, write zones.
     if args.customize:
         check_custom()
     download_file()
