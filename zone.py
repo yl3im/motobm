@@ -300,7 +300,7 @@ def format_channel(item):
     ch_cc = item['colorcode']
 
     output_list.append([ch_alias, ch_rx, ch_tx, ch_cc, item['city'], local_datetime(item['last_seen']),
-                        f"https://brandmeister.network/?page=repeater&id={item['id']}"])
+                        f"https://brandmeister.network/?page=device&id={item['id']}"])
 
     # Escape values interpolated into the XML below; the table row above keeps the raw values.
     ch_alias = xml_escape(ch_alias)
