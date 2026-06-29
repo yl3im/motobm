@@ -133,3 +133,5 @@ dmypy.json
 .pyre/
 
 custom-values.xml
+
+.claude/
