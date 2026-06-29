@@ -9,7 +9,7 @@ MOTOTRBO zone file generator from BrandMeister repeater list. It makes use of [B
 ## Usage
 
 ```
-usage: zone.py [-h] [-f] -n NAME -b {vhf,uhf} -t {mcc,qth,gps} [-m MCC] [-q QTH] [-r RADIUS] [-lat LAT] [-lng LNG] [-p] [-6] [-zc ZONE_CAPACITY] [-c] [-cs CALLSIGN]
+usage: zone.py [-h] [-f] -n NAME -b {vhf,uhf} -t {mcc,qth,gps} [-m MCC] [-q QTH] [-r RADIUS] [-lat LAT] [-lng LNG] [-p] [-6] [-zc ZONE_CAPACITY] [-c] [-cs CALLSIGN] [-T]
 
 Generate MOTOTRBO zone files from BrandMeister.
 
@@ -34,6 +34,7 @@ optional arguments:
   -c, --customize       Include customized values for each channel.
   -cs CALLSIGN, --callsign CALLSIGN
                         Only list callsigns containing specified string like a region number.
+  -T, --tsv             Print the summary table as tab-separated values instead of space-aligned columns.
 ```
 
 ## Examples

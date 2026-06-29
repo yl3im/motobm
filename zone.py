@@ -43,6 +43,8 @@ parser.add_argument('-zc', '--zone-capacity', default=160, type=int,
 parser.add_argument('-c', '--customize', action='store_true',
                     help='Include customized values for each channel.')
 parser.add_argument('-cs', '--callsign', help='Only list callsigns containing specified string like a region number.')
+parser.add_argument('-T', '--tsv', action='store_true',
+                    help='Print the summary table as tab-separated values instead of space-aligned columns.')
 
 
 args = parser.parse_args()
@@ -255,7 +257,7 @@ def process_channels():
 
         print('\n',
               tabulate(output_list, headers=['Callsign', 'RX', 'TX', 'CC', 'City', 'Last seen', 'URL'],
-                       disable_numparse=True),
+                       disable_numparse=True, tablefmt='tsv' if args.tsv else 'simple'),
               '\n')
 
         # A single chunk keeps the plain zone name; multiple chunks get a #N suffix.
